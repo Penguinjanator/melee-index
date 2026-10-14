@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {}
+export class Navbar {
+  navbarItems: NavbarItem[] = [{ title: 'Links' }, { title: 'About' }];
+}
+
+interface NavbarItem {
+  title: string;
+}

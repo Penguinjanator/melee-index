@@ -14,7 +14,7 @@
           <td>{{ link.title }}</td>
           <td>{{ link.description }}</td>
           <td>
-            <div>
+            <div class="flex flex-wrap gap-1">
               @for (tag of link.tags; track tag) {
                 <app-badge [text]="tag"></app-badge>
               }
