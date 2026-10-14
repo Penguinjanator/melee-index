@@ -1,3 +1,5 @@
+import { SkillLevel } from './skill-level';
+
 export interface Link {
   title: string;
   description: string;
@@ -5,4 +7,5 @@ export interface Link {
   characters: string[];
   url: string;
   submitted: Date;
+  skillLevel: SkillLevel;
 }

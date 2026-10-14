@@ -1,0 +1,39 @@
+<app-dialog title="Submit a resource">
+  <div class="flex gap-3 flex-col">
+    <fieldset class="fieldset">
+      <label class="label" for="name">Name</label>
+      <input type="text" id="name" class="input" placeholder="The name of the article..." />
+      <div class="label">Optional, MeleeIndex's staff will complete this.</div>
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend">Description</legend>
+      <textarea
+        class="textarea h-24"
+        placeholder="A brief description of the article..."
+      ></textarea>
+      <div class="label">Optional, MeleeIndex's staff will complete this.</div>
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <label class="label" for="url">URL</label>
+      <input type="text" id="url" class="input" placeholder="https://meleeindex.com..." />
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <label class="label" for="username">Your name</label>
+      <input type="text" id="username" class="input" placeholder="Your username to display..." />
+    </fieldset>
+
+    <div class="text-xs text-gray-500 mt-2">
+      By submitting this form you agree to MeleeIndex's
+      <a href="/terms" class="link">Terms of Service</a> and
+      <a href="/privacy" class="link">Privacy Policy</a>.
+    </div>
+  </div>
+
+  <ng-container dialog-actions>
+    <button type="button" class="btn" (click)="dialogRef.close()">Close</button>
+    <button type="button" class="btn btn-primary" (click)="dialogRef.close()">Submit</button>
+  </ng-container>
+</app-dialog>

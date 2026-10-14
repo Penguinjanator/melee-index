@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { DialogService } from '../../services/dialog';
+import { SubmitLinkDialog } from '../../components/submit-link-dialog/submit-link-dialog';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +9,13 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  navbarItems: NavbarItem[] = [{ title: 'Links' }, { title: 'About' }];
+  private readonly dialogService = inject(DialogService);
+
+  navbarItems: NavbarItem[] = [{ title: 'Resource' }, { title: 'About' }];
+
+  protected openSubmitLinkDialog(): void {
+    this.dialogService.open(SubmitLinkDialog);
+  }
 }
 
 interface NavbarItem {

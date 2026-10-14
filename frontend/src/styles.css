@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.app-dialog-backdrop {
+  background-color: oklch(0% 0 0 / 0.4);
+}

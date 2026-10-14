@@ -1,0 +1,35 @@
+<div class="bg-base-100 rounded-box flex max-h-[90vh] w-[min(32rem,calc(90vw))] flex-col shadow-xl">
+  <header class="flex items-center justify-between gap-4 px-6 pt-6">
+    <h2 class="text-lg font-bold" [id]="titleId">{{ title() }}</h2>
+    <button
+      type="button"
+      class="btn btn-sm btn-circle btn-ghost"
+      aria-label="Close dialog"
+      (click)="close()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </header>
+
+  <div class="overflow-y-auto px-6 py-4">
+    <ng-content />
+  </div>
+
+  <footer class="flex justify-end gap-2 px-6 pb-6 empty:hidden">
+    <ng-content select="[dialog-actions]" />
+  </footer>
+</div>
